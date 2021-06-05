@@ -10,7 +10,7 @@ func TestAdd(t *testing.T) {
 	}{
 		{0, 0, 0},
 		{1, 2, 3},
-		{2, 2, 5},
+		{2, 2, 4},
 	}
 	for _, c := range cases {
 		actual := add(c.a, c.b)
