@@ -3,9 +3,18 @@ package main
 import "testing"
 
 func TestAdd(t *testing.T) {
-	actual := add(1, 2)
-	expected := 3
-	if actual != expected {
-		t.Errorf("expected %d but got %d", expected, actual)
+	cases := []struct {
+		a        int
+		b        int
+		expected int
+	}{
+		{0, 0, 0},
+		{1, 2, 3},
+	}
+	for _, c := range cases {
+		actual := add(c.a, c.b)
+		if actual != c.expected {
+			t.Errorf("expected %d but got %d", c.expected, actual)
+		}
 	}
 }
